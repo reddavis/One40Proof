@@ -4,13 +4,15 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "One40Proof"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.name = "one40_proof"
+    gem.summary = %Q{A Ruby wrapper around  the 140Proof API}
+    gem.description = %Q{A Ruby wrapper around  the 140Proof API. Documentation can be found here - http://developers.140proof.com/docs/}
     gem.email = "reddavis@gmail.com"
     gem.homepage = "http://github.com/reddavis/One40Proof"
     gem.authors = ["reddavis"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
+    gem.add_dependency "json"
+    gem.add_dependency "httparty"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

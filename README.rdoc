@@ -1,17 +1,58 @@
-= One40Proof
+= 140Proof API Wrapper
 
-Description goes here.
+A Ruby wrapper around  the 140Proof API. Documentation can be found here - http://developers.140proof.com/docs
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+It currently only supports JSON.
 
+== Install
+
+  gem sources -a http://gemcutter.org
+  sudo gem install one40_proof
+  
+== How To Use
+
+Testing ad placement while in development
+
+  require 'rubygems'
+  require 'one40_proof'
+  
+  ad = One40Proof::Test.new
+  
+  # The Ad
+  ad.image_url
+  ad.byline
+  ad.text
+  
+  # User
+  ad.user.screen_name
+  ad.user.user_id
+  ad.user.profile_image_url
+  ad.user.name
+  
+  # Action URLS
+  ad.action_urls.click_url
+  ad.action_urls.favorite_url   # Or ad.action_urls.favourite_url for the English
+  ad.action_urls.impression_url
+  ad.action_urls.friendship_url
+  ad.action_urls.reply_url
+  ad.action_urls.retweet_url
+  
+  
+To get an ad for a specific user
+
+  require 'rubygems'
+  require 'one40_proof'
+  
+  ad = One40Proof::UserAd.new(:user_id => 'reddavis', :publisher_id => 'your publisher id')
+  
+  
+To get an ad for a specific query
+
+  require 'rubygems'
+  require 'one40_proof'
+  
+  ad = One40Proof::Search.new(:user_id => 'reddavis', :publisher_id => 'your publisher id', :q => 'magic hats')
+  
 == Copyright
 
-Copyright (c) 2010 reddavis. See LICENSE for details.
+Copyright (c) 2010 Red Davis. See LICENSE for details.
