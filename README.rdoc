@@ -43,7 +43,7 @@ To get an ad for a specific user
   require 'rubygems'
   require 'one40_proof'
   
-  ad = One40Proof::UserAd.new(:user_id => 'reddavis', :publisher_id => 'your publisher id')
+  ad = One40Proof::UserAd.new(:user_id => 'reddavis', :app_id => 'your app_id')
   
   
 To get an ad for a specific query
@@ -51,7 +51,7 @@ To get an ad for a specific query
   require 'rubygems'
   require 'one40_proof'
   
-  ad = One40Proof::Search.new(:user_id => 'reddavis', :publisher_id => 'your publisher id', :q => 'magic hats')
+  ad = One40Proof::Search.new(:user_id => 'reddavis', :app_id => 'your app_id', :q => 'magic hats')
   
 == Copyright
 
