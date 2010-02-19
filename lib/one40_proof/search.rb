@@ -8,7 +8,7 @@ module One40Proof
     
     # Options:
     # * user_id. Required. The Twitter ID or screen name of a user.
-    # * publisher_id. Required. Your 140 Proof app id.
+    # * app_id. Required. Your 140 Proof app id.
     # * q. Required. The query the user entered. Query strings should be URL encoded. Queries are limited 140 URL encoded characters.
     # * lat. Optional. The user's current latitude. Note: The valid ranges for latitude is -90.0 to +90.0 (North is positive) inclusive. 
     #   This parameter will be ignored if outside that range, if it is not a number, or if there not a corresponding long parameter with this request.
