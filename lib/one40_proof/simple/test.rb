@@ -1,4 +1,4 @@
-require 'one40_proof/base'
+require 'simple/base'
 
 # Returns an ad. Use for testing and verifying your ad-serving code while in development.
 

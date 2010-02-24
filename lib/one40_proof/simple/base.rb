@@ -1,8 +1,8 @@
 require 'httparty'
 require 'json'
-require 'one40_proof/attributes/action_urls'
-require 'one40_proof/attributes/user'
-require 'one40_proof/exceptions'
+require 'attributes/action_urls'
+require 'attributes/user'
+require 'simple/exceptions'
 
 module One40Proof
   class Base
