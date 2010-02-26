@@ -2,7 +2,7 @@ module One40Proof
   class ActionUrls
     
     def initialize(data)
-      @data = data['ads'][0]['action_urls']
+      @data = data
     end
     
     def click_url

@@ -1,8 +1,9 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require 'one40_proof/multi'
 
 describe "User" do
   before(:all) do
-    parsed_json = JSON.parse(test_ad_data)
+    parsed_json = JSON.parse(test_ad_data)['ads'][0]['user']
     @user = One40Proof::User.new(parsed_json)
   end
   

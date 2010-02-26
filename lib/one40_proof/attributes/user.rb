@@ -2,7 +2,7 @@ module One40Proof
   class User
     
     def initialize(data)
-      @data = data['ads'][0]['user']
+      @data = data
     end
     
     def profile_image_url

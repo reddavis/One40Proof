@@ -15,31 +15,31 @@ module One40Proof
     end
     
     def action_urls
-      @action_urls ||= ActionUrls.new(json)
+      @action_urls ||= ActionUrls.new(json['action_urls'])
     end
         
     def user
-      @user ||= User.new(json)
+      @user ||= User.new(json['user'])
     end
     
     def image_url
-      json['ads'][0]['image_url']
+      json['image_url']
     end
     
     # e.g "ads by Pizza Hut"
     def byline
-      json['ads'][0]['byline']
+      json['byline']
     end
     
     # Ad text
     def text
-      json['ads'][0]['text']
+      json['text']
     end
     
     private
             
     def json
-      @json ||= JSON.parse(@response.body)
+      @json ||= JSON.parse(@response.body)['ads'][0]
     end
     
     def validate_response(response)

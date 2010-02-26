@@ -1,20 +1,66 @@
 = 140Proof API Wrapper
 
-A Ruby wrapper around  the 140Proof API. Documentation can be found here - http://developers.140proof.com/docs
+This is a branch experimenting with using Typhoeus (http://github.com/pauldix/typhoeus) to call multiple ads in parallel. 
 
-It currently only supports JSON.
+Documentation for the 140Proof API can be found here - http://developers.140proof.com/docs
 
 == Install
 
-  gem sources -a http://gemcutter.org
-  sudo gem install one40_proof
+  git clone git@github.com:reddavis/One40Proof.git
+  git checkout -b multi origin/multi
+  rake install
   
 == How To Use
+
+<b>Making Parallel Requests</b>
+
+  require 'rubygems'
+  require 'one40_proof/multi'
+  
+  # Queries are created using a hash and then placed in an array
+  queries = []
+  
+  # One40Proof's "Test" method
+  queries << {:method => :test}
+  
+  # One40Proof's "user" method
+  queries << {:method => :user, :user_id => 'sferik', :app_id => 'test'}
+  
+  # One40Proof's "search" method
+  queries << {:method => :search, :user_id => 'sferik', :app_id => 'test', :q => 'New York Mets'}
+  
+  # We then initialize the calls to the service
+  a = One40Proof::Multi::Base.new(queries)
+  
+  # Then we have access to all our ads
+  a.ads.each do |ad|
+    # The Ad
+    ad.image_url
+    ad.byline
+    ad.text
+
+    # User
+    ad.user.screen_name
+    ad.user.user_id
+    ad.user.profile_image_url
+    ad.user.name
+
+    # Action URLS
+    ad.action_urls.click_url
+    ad.action_urls.favorite_url   # Or ad.action_urls.favourite_url for the English
+    ad.action_urls.impression_url
+    ad.action_urls.friendship_url
+    ad.action_urls.reply_url
+    ad.action_urls.retweet_url
+  end
+
+
+<b>Making Single Requests</b>
 
 Testing ad placement while in development
 
   require 'rubygems'
-  require 'one40_proof'
+  require 'one40_proof/simple'
   
   ad = One40Proof::Test.new
   

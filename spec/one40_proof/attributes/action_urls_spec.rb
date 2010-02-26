@@ -1,8 +1,9 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require 'one40_proof/multi'
 
 describe "ActionUrls" do
   before(:all) do
-    parsed_json = JSON.parse(test_ad_data)
+    parsed_json = JSON.parse(test_ad_data)['ads'][0]['action_urls']
     @action_urls = One40Proof::ActionUrls.new(parsed_json)
   end
   

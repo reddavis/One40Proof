@@ -1,7 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require 'one40_proof/simple'
 
 describe "Base" do
-  
+
   describe "200 OK" do
     before(:all) do
       stub_request(:get, base_url).to_return(:body => user_ad_data)
