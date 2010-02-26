@@ -54,10 +54,6 @@ module One40Proof
       def base_uri
         "http://api.140proof.com"
       end
-            
-      def json
-        @json ||= JSON.parse(@response.body)
-      end
   
     end
   end
