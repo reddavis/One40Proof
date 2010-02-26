@@ -27,9 +27,9 @@ This can be found on the benchmark dir
   end
   
               ## Ruby 1.9.1 ##
-          user      system      total      real
-Simple  0.030000   0.020000   0.050000 (  2.507165)
-Multi   0.010000   0.010000   0.020000 (  0.426687)
+            user      system      total      real
+  Simple  0.030000   0.020000   0.050000 (  2.507165)
+  Multi   0.010000   0.010000   0.020000 (  0.426687)
   
 == How To Use
 
