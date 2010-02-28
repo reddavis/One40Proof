@@ -12,7 +12,7 @@ module One40Proof
         ad_requests.each do |ad_request|
           url = build_url(ad_request.delete(:method))
         
-          params = ad_request.empty? ? {} : {:params => turn_keys_to_strings(ad_request)}
+          params = {:params => turn_keys_to_strings(ad_request)}
           request = Typhoeus::Request.new(url, params)
         
           request.on_complete do |response|
