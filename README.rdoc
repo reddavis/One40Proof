@@ -7,7 +7,7 @@ Documentation for the 140Proof API can be found here - http://developers.140proo
 == Install
 
   git clone git@github.com:reddavis/One40Proof.git
-  git checkout -b multi origin/multi
+  git checkout -b multi origin/multi_requests
   rake install
   
 == Benchmarks
