@@ -4,15 +4,15 @@ This is a wrapper around the 140 Proof API.
 
 It is split into two parts. The first is a simple interface (One40Proof::Base) and the second is a multi interface (One40Proof::Multi::Base).
 
-The simple interface requires:
+<b>The simple interface requires:</b>
 
 - http://github.com/jnunemaker/httparty
 
-The multi interface requires:
+<b>The multi interface requires:</b>
 
 - http://github.com/pauldix/typhoeus
 
-They both require:
+<b>They both require:</b>
 
 - http://flori.github.com/json
 
