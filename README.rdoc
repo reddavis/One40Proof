@@ -44,10 +44,10 @@ This can be found on the benchmark dir
   # One40Proof's "Test" method
   queries << {:method => :test}
   
-  # One40Proof's "user" method
+  # One40Proof's "User" method
   queries << {:method => :user, :user_id => 'sferik', :app_id => 'test'}
   
-  # One40Proof's "search" method
+  # One40Proof's "Search" method
   queries << {:method => :search, :user_id => 'sferik', :app_id => 'test', :q => 'New York Mets'}
   
   # We then initialize the calls to the service
