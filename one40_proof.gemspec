@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{one40_proof}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["reddavis"]
-  s.date = %q{2010-02-19}
+  s.date = %q{2010-03-07}
   s.description = %q{A Ruby wrapper around  the 140Proof API. Documentation can be found here - http://developers.140proof.com/docs/}
   s.email = %q{reddavis@gmail.com}
   s.extra_rdoc_files = [
@@ -23,36 +23,47 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "lib/one40_proof.rb",
+     "benchmark/benchmark.rb",
      "lib/one40_proof/attributes/action_urls.rb",
+     "lib/one40_proof/attributes/ad.rb",
+     "lib/one40_proof/attributes/status.rb",
      "lib/one40_proof/attributes/user.rb",
-     "lib/one40_proof/base.rb",
-     "lib/one40_proof/exceptions.rb",
-     "lib/one40_proof/search.rb",
-     "lib/one40_proof/test.rb",
-     "lib/one40_proof/user_ad.rb",
+     "lib/one40_proof/multi.rb",
+     "lib/one40_proof/multi/base.rb",
+     "lib/one40_proof/simple.rb",
+     "lib/one40_proof/simple/base.rb",
+     "lib/one40_proof/simple/exceptions.rb",
+     "lib/one40_proof/simple/search.rb",
+     "lib/one40_proof/simple/test.rb",
+     "lib/one40_proof/simple/user_ad.rb",
      "one40_proof.gemspec",
      "spec/one40_proof/attributes/action_urls_spec.rb",
+     "spec/one40_proof/attributes/ad_spec.rb",
+     "spec/one40_proof/attributes/status_spec.rb",
      "spec/one40_proof/attributes/user_spec.rb",
-     "spec/one40_proof/base_spec.rb",
-     "spec/one40_proof/search_spec.rb",
-     "spec/one40_proof/test_spec.rb",
-     "spec/one40_proof/user_ad_spec.rb",
+     "spec/one40_proof/multi/base_spec.rb",
+     "spec/one40_proof/simple/base_spec.rb",
+     "spec/one40_proof/simple/search_spec.rb",
+     "spec/one40_proof/simple/test_spec.rb",
+     "spec/one40_proof/simple/user_ad_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/reddavis/One40Proof}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{A Ruby wrapper around  the 140Proof API}
   s.test_files = [
     "spec/one40_proof/attributes/action_urls_spec.rb",
+     "spec/one40_proof/attributes/ad_spec.rb",
+     "spec/one40_proof/attributes/status_spec.rb",
      "spec/one40_proof/attributes/user_spec.rb",
-     "spec/one40_proof/base_spec.rb",
-     "spec/one40_proof/search_spec.rb",
-     "spec/one40_proof/test_spec.rb",
-     "spec/one40_proof/user_ad_spec.rb",
+     "spec/one40_proof/multi/base_spec.rb",
+     "spec/one40_proof/simple/base_spec.rb",
+     "spec/one40_proof/simple/search_spec.rb",
+     "spec/one40_proof/simple/test_spec.rb",
+     "spec/one40_proof/simple/user_ad_spec.rb",
      "spec/spec_helper.rb"
   ]
 
