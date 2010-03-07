@@ -16,6 +16,10 @@ describe "Base" do
     it "should return a User object" do
       @base.user.should be_a(One40Proof::User)
     end
+    
+    it "should return a Status object" do
+      @base.status.should be_a(One40Proof::Status)
+    end
 
     it "should return image_url" do
       @base.image_url.should == "http://img.tweetimag.es/i/LittleSkillet_n"

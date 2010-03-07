@@ -26,4 +26,8 @@ describe "Ad" do
   it "should return an ActionUrls object" do
     @ad.action_urls.should be_a(One40Proof::ActionUrls)
   end
+  
+  it "should return a Status object" do
+    @ad.status.should be_a(One40Proof::Status)
+  end
 end

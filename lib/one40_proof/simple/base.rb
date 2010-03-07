@@ -1,7 +1,6 @@
 require 'httparty'
 require 'json'
-require 'attributes/action_urls'
-require 'attributes/user'
+require 'attributes/ad'
 require 'simple/exceptions'
 
 module One40Proof
@@ -15,31 +14,37 @@ module One40Proof
     end
     
     def action_urls
-      @action_urls ||= ActionUrls.new(json['action_urls'])
+      ad.action_urls
     end
         
     def user
-      @user ||= User.new(json['user'])
+      ad.user
+    end
+    
+    def status
+      ad.status
     end
     
     def image_url
-      json['image_url']
+      ad.image_url
     end
     
-    # e.g "ads by Pizza Hut"
     def byline
-      json['byline']
+      ad.byline
     end
     
-    # Ad text
     def text
-      json['text']
+      ad.text
     end
     
     private
             
+    def ad
+      @ad ||= Ad.new(json)
+    end
+    
     def json
-      @json ||= JSON.parse(@response.body)['ads'][0]
+      JSON.parse(@response.body)
     end
     
     def validate_response(response)

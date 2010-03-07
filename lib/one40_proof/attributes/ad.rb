@@ -1,5 +1,6 @@
 require 'attributes/user'
 require 'attributes/action_urls'
+require 'attributes/status'
 
 module One40Proof
   class Ad
@@ -12,10 +13,12 @@ module One40Proof
       @data['image_url']
     end
     
+    # e.g "ads by Pizza Hut"
     def byline
       @data['byline']
     end
     
+    # Ad text
     def text
       @data['text']
     end
@@ -26,6 +29,10 @@ module One40Proof
     
     def action_urls
       @action_urls ||= ActionUrls.new(@data['action_urls'])
+    end
+    
+    def status
+      @status ||= Status.new(@data['status'])
     end
     
   end
