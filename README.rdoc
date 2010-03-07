@@ -1,14 +1,29 @@
 = 140Proof API Wrapper
 
-This is a branch experimenting with using Typhoeus (http://github.com/pauldix/typhoeus) to call multiple ads in parallel. 
+This is a wrapper around the 140 Proof API.
+
+It is split into two parts. The first is a simple interface (One40Proof::Base) and the second is a multi interface (One40Proof::Multi::Base).
+
+The simple interface requires:
+
+- http://github.com/jnunemaker/httparty
+
+The multi interface requires:
+
+- http://github.com/pauldix/typhoeus
+
+They both require:
+
+- http://flori.github.com/json
+
+The multi interface allows you to make parallel requests (benchmarks are below). 
 
 Documentation for the 140Proof API can be found here - http://developers.140proof.com/docs
 
 == Install
 
-  git clone git@github.com:reddavis/One40Proof.git
-  git checkout -b multi origin/multi_requests
-  rake install
+  gem sources -a http://gemcutter.org
+  sudo gem install one40_proof
   
 == Benchmarks
 
@@ -26,7 +41,7 @@ This can be found on the benchmark dir
     end
   end
   
-              ## Ruby 1.9.1 ##
+                ## Ruby 1.9.1 ##
             user      system      total      real
   Simple  0.030000   0.020000   0.050000 (  2.507165)
   Multi   0.010000   0.010000   0.020000 (  0.426687)
@@ -34,11 +49,6 @@ This can be found on the benchmark dir
 == How To Use
 
 <b>Making Parallel Requests</b>
-
-Dependencies
-
-- http://github.com/pauldix/typhoeus
-- http://flori.github.com/json
 
 Queries are created using a hash and then placed in an array
 
@@ -83,11 +93,6 @@ Queries are created using a hash and then placed in an array
 
 
 <b>Making Single Requests</b>
-
-Dependencies
-
-- http://github.com/jnunemaker/httparty
-- http://flori.github.com/json
 
 Testing ad placement while in development
 
