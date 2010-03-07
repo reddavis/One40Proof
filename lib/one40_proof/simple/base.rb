@@ -1,5 +1,4 @@
 require 'httparty'
-require 'json'
 require 'attributes/ad'
 require 'simple/exceptions'
 
@@ -40,11 +39,7 @@ module One40Proof
     private
             
     def ad
-      @ad ||= Ad.new(json)
-    end
-    
-    def json
-      JSON.parse(@response.body)
+      @ad ||= Ad.new(@response.body)
     end
     
     def validate_response(response)

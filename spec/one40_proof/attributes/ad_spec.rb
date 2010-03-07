@@ -3,8 +3,7 @@ require 'one40_proof/multi'
 
 describe "Ad" do
   before(:all) do
-    parsed_json = JSON.parse(test_ad_data)
-    @ad = One40Proof::Ad.new(parsed_json)
+    @ad = One40Proof::Ad.new(test_ad_data)
   end
   
   it "should have an image_url" do

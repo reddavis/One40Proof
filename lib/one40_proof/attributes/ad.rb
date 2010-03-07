@@ -1,3 +1,4 @@
+require 'json'
 require 'attributes/user'
 require 'attributes/action_urls'
 require 'attributes/status'
@@ -6,7 +7,7 @@ module One40Proof
   class Ad
     
     def initialize(data)
-      @data = data['ads'][0]
+      @data = JSON.parse(data)['ads'][0]
     end
     
     def image_url

@@ -1,5 +1,4 @@
 require 'typhoeus'
-require 'json'
 require 'attributes/ad'
 
 module One40Proof
@@ -16,7 +15,7 @@ module One40Proof
           request = Typhoeus::Request.new(url, params)
         
           request.on_complete do |response|
-            ads << Ad.new(JSON.parse(response.body))
+            ads << Ad.new(response.body)
           end
         
           hydra.queue(request)
