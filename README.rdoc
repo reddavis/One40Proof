@@ -35,6 +35,11 @@ This can be found on the benchmark dir
 
 <b>Making Parallel Requests</b>
 
+Dependencies
+
+- http://github.com/pauldix/typhoeus
+- http://flori.github.com/json
+
   require 'rubygems'
   require 'one40_proof/multi'
   
@@ -77,6 +82,11 @@ This can be found on the benchmark dir
 
 
 <b>Making Single Requests</b>
+
+Dependencies
+
+- http://github.com/jnunemaker/httparty
+- http://flori.github.com/json
 
 Testing ad placement while in development
 
