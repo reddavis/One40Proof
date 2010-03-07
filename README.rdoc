@@ -40,11 +40,11 @@ Dependencies
 - http://github.com/pauldix/typhoeus
 - http://flori.github.com/json
 
+Queries are created using a hash and then placed in an array
 
   require 'rubygems'
   require 'one40_proof/multi'
-  
-  # Queries are created using a hash and then placed in an array
+
   queries = []
   
   # One40Proof's "Test" method
