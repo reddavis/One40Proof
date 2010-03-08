@@ -89,6 +89,9 @@ Queries are created using a hash and then placed in an array
     ad.action_urls.friendship_url
     ad.action_urls.reply_url
     ad.action_urls.retweet_url
+    
+    # Status
+    ad.status.id
   end
 
 
@@ -120,6 +123,8 @@ Testing ad placement while in development
   ad.action_urls.reply_url
   ad.action_urls.retweet_url
   
+  # Status
+  ad.status.id
   
 To get an ad for a specific user
 
