@@ -6,7 +6,7 @@ describe "Base" do
   describe "200 OK" do
     before(:all) do
       stub_request(:get, base_url).to_return(:body => user_ad_data)
-      @base = One40Proof::Base.new(base_url)
+      @base = One40Proof::Simple::Base.new(base_url)
     end
 
     it "should return an ActionUrls object" do
@@ -39,7 +39,7 @@ describe "Base" do
       stub_request(:get, base_url).to_return(:status => 404)
       
       lambda do  
-        @base = One40Proof::Base.new(base_url)
+        @base = One40Proof::Simple::Base.new(base_url)
       end.should raise_error(One40Proof::NotFound)
     end
   end

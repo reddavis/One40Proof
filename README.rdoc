@@ -32,7 +32,7 @@ This can be found on the benchmark dir
   n = 10
   Benchmark.bm do |x|
     x.report("Simple") do 
-      n.times { One40Proof::Test.new }
+      n.times { One40Proof::Simple::Test.new }
     end
     x.report("Multi") do
       query = []
@@ -102,7 +102,7 @@ Testing ad placement while in development
   require 'rubygems'
   require 'one40_proof/simple'
   
-  ad = One40Proof::Test.new
+  ad = One40Proof::Simple::Test.new
   
   # The Ad
   ad.image_url
@@ -129,17 +129,17 @@ Testing ad placement while in development
 To get an ad for a specific user
 
   require 'rubygems'
-  require 'one40_proof'
+  require 'one40_proof/simple'
   
-  ad = One40Proof::UserAd.new(:user_id => 'reddavis', :app_id => 'your app_id')
+  ad = One40Proof::Simple::UserAd.new(:user_id => 'reddavis', :app_id => 'your app_id')
   
   
 To get an ad for a specific query
 
   require 'rubygems'
-  require 'one40_proof'
+  require 'one40_proof/simple'
   
-  ad = One40Proof::Search.new(:user_id => 'reddavis', :app_id => 'your app_id', :q => 'magic hats')
+  ad = One40Proof::Simple::Search.new(:user_id => 'reddavis', :app_id => 'your app_id', :q => 'magic hats')
   
 == Copyright
 

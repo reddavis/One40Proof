@@ -5,7 +5,7 @@ describe "Test" do
    it "should request GET /test/ads.json" do
      url = base_url + '/test/ads.json'
      stub_request(:get, url)
-     One40Proof::Test.new
+     One40Proof::Simple::Test.new
  
      WebMock.should have_requested(:get, url)
    end
