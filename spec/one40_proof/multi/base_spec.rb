@@ -17,16 +17,15 @@ describe "MultiBase" do
     
     Typhoeus::Hydra.stub!(:new).and_return(hydra)
     
-    @a = One40Proof::Multi::Base.new(queries)
-    @a.ads.should be_an(Array)
+    @response = One40Proof::Multi::Base.new(queries)
   end
     
   it "should return an Array of Ads" do
-    @a.ads.should be_an(Array)
+    @response.ads.should be_an(Array)
   end
   
   it "should create 3 ads" do
-    @a.ads.size.should == 3
+    @response.ads.size.should == 3
   end
   
   def queries
