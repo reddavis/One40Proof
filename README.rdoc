@@ -129,7 +129,7 @@ Testing ad placement while in development
 To get an ad for a specific user
 
   require 'rubygems'
-  require 'one40_proof'
+  require 'one40_proof/simple'
   
   ad = One40Proof::UserAd.new(:user_id => 'reddavis', :app_id => 'your app_id')
   
@@ -137,7 +137,7 @@ To get an ad for a specific user
 To get an ad for a specific query
 
   require 'rubygems'
-  require 'one40_proof'
+  require 'one40_proof/simple'
   
   ad = One40Proof::Search.new(:user_id => 'reddavis', :app_id => 'your app_id', :q => 'magic hats')
   
