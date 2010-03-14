@@ -93,6 +93,15 @@ Queries are created using a hash and then placed in an array
     # Status
     ad.status.id
   end
+  
+  # You can also specify what happens if a request fails
+  a = One40Proof::Multi::Base.new(queries, :on_fail => "Fail!")
+  
+  # If all our requests fail then:
+  a.ads
+    #=> ["Fail!", "Fail!", "Fail!"]
+    
+  # If nothing is specified on_fail then a nil object is just placed inside the array
 
 
 <b>Making Single Requests</b>
