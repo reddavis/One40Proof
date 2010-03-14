@@ -59,7 +59,7 @@ module One40Proof
         when :search
           path = '/ads/search.json'
         else
-          raise One40Proof::InvalidAPICall.new
+          raise InvalidAPICall.new
         end
       
         base_uri + path
