@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{one40_proof}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["reddavis"]
-  s.date = %q{2010-03-07}
+  s.date = %q{2010-03-14}
   s.description = %q{A Ruby wrapper around  the 140Proof API. Documentation can be found here - http://developers.140proof.com/docs/}
   s.email = %q{reddavis@gmail.com}
   s.extra_rdoc_files = [
@@ -28,11 +28,11 @@ Gem::Specification.new do |s|
      "lib/one40_proof/attributes/ad.rb",
      "lib/one40_proof/attributes/status.rb",
      "lib/one40_proof/attributes/user.rb",
+     "lib/one40_proof/exceptions.rb",
      "lib/one40_proof/multi.rb",
      "lib/one40_proof/multi/base.rb",
      "lib/one40_proof/simple.rb",
      "lib/one40_proof/simple/base.rb",
-     "lib/one40_proof/simple/exceptions.rb",
      "lib/one40_proof/simple/search.rb",
      "lib/one40_proof/simple/test.rb",
      "lib/one40_proof/simple/user_ad.rb",
