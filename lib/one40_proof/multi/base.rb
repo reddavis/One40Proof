@@ -4,8 +4,11 @@ require 'attributes/ad'
 module One40Proof
   module Multi
     class Base
-    
-      def initialize(ad_requests)
+      
+      # Takes an array of hashs that build the requests.
+      # User can also specify an :on_fail option.
+      def initialize(ad_requests, options={})
+        on_fail = options[:on_fail]
         hydra = Typhoeus::Hydra.new
             
         ad_requests.each do |ad_request|
@@ -15,7 +18,11 @@ module One40Proof
           request = Typhoeus::Request.new(url, params)
         
           request.on_complete do |response|
-            ads << Ad.new(response.body)
+            if response.code == 200
+              ads << Ad.new(response.body)
+            else
+              ads << (on_fail.respond_to?(:call) ? on_fail.call : on_fail)
+            end
           end
         
           hydra.queue(request)
