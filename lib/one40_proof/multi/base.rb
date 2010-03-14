@@ -1,5 +1,6 @@
 require 'typhoeus'
 require 'attributes/ad'
+require 'exceptions'
 
 module One40Proof
   module Multi
@@ -52,6 +53,8 @@ module One40Proof
           path = '/ads/user.json'
         when :search
           path = '/ads/search.json'
+        else
+          raise One40Proof::InvalidAPICall.new
         end
       
         base_uri + path

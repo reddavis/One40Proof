@@ -1,6 +1,6 @@
 require 'httparty'
 require 'attributes/ad'
-require 'simple/exceptions'
+require 'exceptions'
 
 module One40Proof
   class Base
