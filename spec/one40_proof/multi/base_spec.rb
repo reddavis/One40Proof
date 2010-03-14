@@ -36,7 +36,7 @@ describe "MultiBase" do
   
       # I receive undefined method `request=' for #<WebMock::Response:0x7fc658> without these:
       test_response.stub!(:request=)
-      # I get undefined method `code' fo WebMock (0.9.1)
+      # I get undefined method 'code' for WebMock (0.9.1)
       test_response.stub!(:code).and_return(404)
     
       hydra.stub(:get, /http:\/\/api.140proof.com/).and_return(test_response)
