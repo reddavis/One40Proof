@@ -19,11 +19,7 @@ module One40Proof
           request = Typhoeus::Request.new(url, params)
         
           request.on_complete do |response|
-            if response.code == 200
-              ads << Ad.new(response.body)
-            else
-              ads << (on_fail.respond_to?(:call) ? on_fail.call : on_fail)
-            end
+            handle_response(response, on_fail)
           end
         
           hydra.queue(request)
@@ -37,6 +33,15 @@ module One40Proof
       end
         
       private
+      
+      # The Thyphoeus response class gets sent here
+      def handle_response(response, on_fail)
+        if response.code == 200
+          ads << Ad.new(response.body)
+        else
+          ads << (on_fail.respond_to?(:call) ? on_fail.call : on_fail)
+        end
+      end
     
       # I get undefined method `<=>' for :user_id:Symbol in Ruby 1.8.6
       def turn_keys_to_strings(hash)
