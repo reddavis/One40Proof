@@ -97,6 +97,9 @@ Queries are created using a hash and then placed in an array
   # You can also specify what happens if a request fails
   a = One40Proof::Multi::Base.new(queries, :on_fail => "Fail!")
   
+  # It can also take anything that responds to #call
+  # e.g. One40Proof::Multi::Base.new(queries, :on_fail => Proc.new {raise "fail"})
+  
   # If all our requests fail then:
   a.ads
     #=> ["Fail!", "Fail!", "Fail!"]
