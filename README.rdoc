@@ -152,7 +152,11 @@ To get an ad for a specific query
   require 'one40_proof/simple'
   
   ad = One40Proof::Search.new(:user_id => 'reddavis', :app_id => 'your app_id', :q => 'magic hats')
-  
+
+== Issues
+
+Please report any problems or feature requests here[http://github.com/reddavis/One40Proof/issues].
+
 == Copyright
 
 Copyright (c) 2010 Red Davis. See LICENSE for details.
