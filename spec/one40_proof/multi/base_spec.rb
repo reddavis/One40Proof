@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 require 'one40_proof/multi'
-require 'one40_proof/simple/exceptions'
+require 'one40_proof/exceptions'
 
 describe "MultiBase" do
   describe "Requests" do
