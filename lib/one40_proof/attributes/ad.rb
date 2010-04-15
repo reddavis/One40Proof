@@ -37,6 +37,7 @@ module One40Proof
       @status ||= Status.new(@data['status'])
     end
     
+    # The ad's impression_url must be requested (using the GET method) when an ad unit is displayed (for verification purposes).
     def validate_impression!
       Net::HTTP.get(URI.parse(action_urls.impression_url))
     end
