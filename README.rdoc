@@ -75,7 +75,7 @@ Queries are created using a hash and then placed in an array
     ad.image_url
     ad.byline
     ad.text
-    ad.validate_impression!  #The ad's impression_url must be requested (using the GET method) when an ad unit is displayed (for verification purposes)
+    ad.validate_impression!  # Sends a GET request to the impression_validation url
     
     
     # User
@@ -122,7 +122,7 @@ Testing ad placement while in development
   ad.image_url
   ad.byline
   ad.text
-  ad.validate_impression!  #The ad's impression_url must be requested (using the GET method) when an ad unit is displayed (for verification purposes)
+  ad.validate_impression!  # Sends a GET request to the impression_validation url
   
   # User
   ad.user.screen_name
