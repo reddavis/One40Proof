@@ -29,4 +29,11 @@ describe "Ad" do
   it "should return a Status object" do
     @ad.status.should be_a(One40Proof::Status)
   end
+  
+  it "should send a get request to action_urls.impression_url" do
+    stub_request(:get, @ad.action_urls.impression_url)
+    @ad.validate_impression!
+
+    WebMock.should have_requested(:get, @ad.action_urls.impression_url)
+  end
 end

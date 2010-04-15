@@ -4,7 +4,7 @@ require 'exceptions'
 
 module One40Proof
   class Base
-    include HTTParty
+    include HTTParty  
     format :json
     base_uri "http://api.140proof.com"
     
@@ -36,6 +36,10 @@ module One40Proof
       ad.text
     end
     
+    def validate_impression!
+      ad.validate_impression!
+    end
+        
     private
             
     def ad

@@ -2,6 +2,7 @@ require 'json'
 require 'attributes/user'
 require 'attributes/action_urls'
 require 'attributes/status'
+require 'net/http'
 
 module One40Proof
   class Ad
@@ -36,5 +37,9 @@ module One40Proof
       @status ||= Status.new(@data['status'])
     end
     
+    def validate_impression!
+      Net::HTTP.get(URI.parse(action_urls.impression_url))
+    end
+        
   end
 end

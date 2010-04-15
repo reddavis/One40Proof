@@ -32,6 +32,13 @@ describe "Base" do
     it "should return text" do
       @base.text.should == "Serving up farm-fresh soul food and San Francisco's finest chicken and waffles. Follow @LittleSkillet for today's specials."
     end
+    
+    it "should send a get request to action_urls.impression_url" do
+      stub_request(:get, @base.action_urls.impression_url)
+      @base.validate_impression!
+
+      WebMock.should have_requested(:get, @base.action_urls.impression_url)
+    end
   end
   
   describe "404" do
@@ -43,5 +50,4 @@ describe "Base" do
       end.should raise_error(One40Proof::NotFound)
     end
   end
-
 end
