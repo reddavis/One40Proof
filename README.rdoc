@@ -75,7 +75,9 @@ Queries are created using a hash and then placed in an array
     ad.image_url
     ad.byline
     ad.text
-
+    ad.validate_impression!  #The ad's impression_url must be requested (using the GET method) when an ad unit is displayed (for verification purposes)
+    
+    
     # User
     ad.user.screen_name
     ad.user.user_id
@@ -89,7 +91,7 @@ Queries are created using a hash and then placed in an array
     ad.action_urls.friendship_url
     ad.action_urls.reply_url
     ad.action_urls.retweet_url
-    
+        
     # Status
     ad.status.id
   end
@@ -120,6 +122,7 @@ Testing ad placement while in development
   ad.image_url
   ad.byline
   ad.text
+  ad.validate_impression!  #The ad's impression_url must be requested (using the GET method) when an ad unit is displayed (for verification purposes)
   
   # User
   ad.user.screen_name
