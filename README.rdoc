@@ -27,6 +27,13 @@ http://rdoc.info/projects/reddavis/One40Proof
 
 == Install
 
+  ## Beta V2 ##
+  git clone git://github.com/reddavis/One40Proof.git
+  rake gemspec
+  rake build
+  rake install
+
+  ## Stable ##
   gem sources -a http://gemcutter.org
   sudo gem install one40_proof
 
