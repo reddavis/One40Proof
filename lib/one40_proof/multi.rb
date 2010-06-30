@@ -1,3 +1,3 @@
 $:.unshift(File.dirname(__FILE__))
 
-require 'multi/base'
+require 'multi/user_ad'

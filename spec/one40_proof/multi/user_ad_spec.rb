@@ -7,7 +7,7 @@ describe One40Proof::Multi do
     describe "Good Response" do
       before do
         http_stubbing(200)
-        @response = One40Proof::Multi::Base.new(queries)
+        @response = One40Proof::Multi::UserAd.new(queries)
       end
 
       it "should return an Array of Ads" do
@@ -26,12 +26,12 @@ describe One40Proof::Multi do
 
       it "should raise an error" do
         lambda do
-          One40Proof::Multi::Base.new(queries, :on_fail => Proc.new {raise One40Proof::NotFound.new})
+          One40Proof::Multi::UserAd.new(queries, :on_fail => Proc.new {raise One40Proof::NotFound.new})
         end.should raise_error(One40Proof::NotFound)
       end
 
       it "should include 'hello' in ads array" do
-        One40Proof::Multi::Base.new(queries, :on_fail => "Hello").ads.should include('Hello')
+        One40Proof::Multi::UserAd.new(queries, :on_fail => "Hello").ads.should include('Hello')
       end
     end
 

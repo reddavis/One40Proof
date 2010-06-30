@@ -7,7 +7,7 @@ require 'exceptions'
 
 module One40Proof
   module Multi
-    class Base
+    class UserAd
 
       # Takes an array of hashs that build the requests.
       # User can also specify an :on_fail option.

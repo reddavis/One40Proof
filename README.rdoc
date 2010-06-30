@@ -2,7 +2,7 @@
 
 This is a wrapper around the 140 Proof API.
 
-It is split into two parts. The first is a simple interface (One40Proof::Base) and the second is a multi interface (One40Proof::Multi::Base).
+It is split into two parts. The first is a simple interface (One40Proof::UserAd) and the second is a multi interface (One40Proof::Multi::UserAd).
 
 <b>The simple interface requires:</b>
 
@@ -33,6 +33,7 @@ http://rdoc.info/projects/reddavis/One40Proof
 == Benchmarks
 
 ## Broken ##
+
 This can be found on the benchmark dir
 
   n = 10
@@ -43,7 +44,7 @@ This can be found on the benchmark dir
     x.report("Multi") do
       query = []
       n.times { query << {:method => :test} }
-      One40Proof::Multi::Base.new(query)
+      One40Proof::Multi::UserAd.new(query)
     end
   end
 
@@ -68,7 +69,7 @@ Queries are created using a hash and then placed in an array
   queries << {:user_name => 'sferik', :app_name => 'Test'}
 
   # We then initialize the calls to the service
-  a = One40Proof::Multi::Base.new(queries)
+  a = One40Proof::Multi::UserAd.new(queries)
 
   # Then we have access to all our ads
   a.ads.each do |ad|
@@ -84,10 +85,10 @@ Queries are created using a hash and then placed in an array
   end
 
   # You can also specify what happens if a request fails
-  a = One40Proof::Multi::Base.new(queries, :on_fail => "Fail!")
+  a = One40Proof::Multi::UserAd.new(queries, :on_fail => "Fail!")
 
   # It can also take anything that responds to #call
-  # e.g. One40Proof::Multi::Base.new(queries, :on_fail => Proc.new {raise "fail"})
+  # e.g. One40Proof::Multi::UserAd.new(queries, :on_fail => Proc.new {raise "fail"})
 
   # If all our requests fail then:
   a.ads
