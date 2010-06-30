@@ -1,0 +1,11 @@
+{
+  "ads": [{
+    "click_url": "http://140proof.com",
+    "type": "banner",
+    "impression_url": "http://dev.140proof.com/images/sample_banner.jpg",
+    "advertiser": "140 Proof",
+    "tweet_url": "http://twitter.com/?status=Are+you+advertising+on+Twitter+yet%3F+Use+140+Proof+ads+to+reach+the+audience+you+want+with+ads+like+this.+Learn+more%3A+http%3A%2F%2F140proof.com",
+    "text": "Are you advertising on Twitter yet? Use 140 Proof ads to reach the audience you want with ads like this. Learn more: <a href=\"http://140proof.com\">http://140proof.com</a>",
+    "byline": "<a href=\"http://140proof.com/\">ads by 140 Proof</a>"
+  }]
+}

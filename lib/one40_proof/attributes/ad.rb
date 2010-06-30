@@ -1,46 +1,47 @@
 require 'json'
-require 'attributes/user'
-require 'attributes/action_urls'
-require 'attributes/status'
 require 'net/http'
 
 module One40Proof
   class Ad
-    
+
     def initialize(data)
       @data = JSON.parse(data)['ads'][0]
     end
-    
-    def image_url
-      @data['image_url']
+
+    def type
+      @data['type']
     end
-    
+
     # e.g "ads by Pizza Hut"
     def byline
       @data['byline']
     end
-    
+
     # Ad text
     def text
       @data['text']
     end
-    
-    def user
-      @user ||= User.new(@data['user'])
+
+    def advertiser
+      @data['advertiser']
     end
-    
-    def action_urls
-      @action_urls ||= ActionUrls.new(@data['action_urls'])
+
+    def tweet_url
+      @data['tweet_url']
     end
-    
-    def status
-      @status ||= Status.new(@data['status'])
+
+    def impression_url
+      @data['impression_url']
     end
-    
+
+    def click_url
+      @data['click_url']
+    end
+
     # The ad's impression_url must be requested (using the GET method) when an ad unit is displayed (for verification purposes).
     def validate_impression!
-      Net::HTTP.get(URI.parse(action_urls.impression_url))
+      Net::HTTP.get(URI.parse(impression_url))
     end
-        
+
   end
 end

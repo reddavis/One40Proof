@@ -1,6 +1,8 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'rubygems'
+require 'bundler'
+Bundler.require(:test)
 require 'spec'
 require 'spec/autorun'
 require 'webmock/rspec'
@@ -8,17 +10,12 @@ require 'webmock/rspec'
 include WebMock
 
 def base_url
-  "http://api.140proof.com"
+  "http://api2.140proof.com"
 end
 
 # From http://api.140proof.com/test/ads.json
-def test_ad_data
-  fixture('test')
-end
-
-# From http://api.140proof.com/ads/user.json?user_id=sferik&app_id=test
-def user_ad_data
-  fixture('user')
+def ad_json
+  fixture('ad_response')
 end
 
 def fixture(name)
